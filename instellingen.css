@@ -1,0 +1,48 @@
+.instelButton {
+    border-radius: 5px;
+    border: none;
+    width: 30vw;
+    max-width: 400px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid #2196F3;
+    display: inline-block;
+    float: left;
+}
+
+.instelButton.gekozen {
+    background-color: #1E25BF;
+    color: white;
+    border-color: #1E25BF;
+}
+
+.instelButton:hover:not(.gekozen) {
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+}
+
+.insetellingenTekst {
+    display: inline-block;
+    font-size: 26px;
+    margin: 14px 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30vw;
+    float: left;
+}
+
+.insetellingenTekst:hover {
+    color: white;
+}
+
+
+/*.instelling {
+    height: 70px;
+}*/

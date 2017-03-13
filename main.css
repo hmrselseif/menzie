@@ -1,0 +1,128 @@
+* {
+    font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+}
+html {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#score {
+  color: white;
+}
+
+#container {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-height: 100%;
+    height: 90vh;
+    margin-top: 0;
+    display: table;
+    background-color: rgba(	33, 150, 243,0.6);
+}
+
+.scherm {
+    display: none;
+}
+#line {
+    background-color: #1E25BF;
+    height: 4px;
+
+}
+
+
+#name {
+    margin: 0;
+    padding: 0;
+}
+#head {
+    text-align: center;
+    font-size: 80px;
+    color: black;
+    height: 130px;
+    margin: 0;
+    width: 200px;
+    padding-top: 30px;
+    padding: 0px;
+
+
+    position: fixed;
+
+
+}
+#logo {
+    position: relative;
+    max-height: 116px;
+    height: 10vh;
+    display: block;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+#terugButton {
+    z-index: 2;
+    max-height: 100px;
+    height: 10vh;
+    width: 10vh;
+    font-size: 1em;
+    border: 2px solid #2196F3;
+    max-width: 100px;
+    text-align: center;
+    position: absolute;
+    margin: 5px;
+    float: left;
+    border-radius: 8px;
+    background-color: white;
+
+}
+#terugButton:hover {
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+
+}
+
+
+
+
+#start {
+    width: 400px;
+    margin: 10vh auto;
+}
+
+.menubutton {
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 400px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 14px 7px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #2196F3;
+}
+.menubutton:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+#score {
+    width: 920px;
+    margin: 0 auto;
+    font-size: 4em;
+    margin-left: 20px;
+}
+
+#footer {
+    text-align: center;
+    
+}

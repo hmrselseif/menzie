@@ -1,0 +1,261 @@
+<html>
+
+<head>
+    <script src="main.js"></script>
+    <script src="vragen.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="instellingen.css">
+    <link rel="stylesheet" href="vragen.css">
+    <link rel='icon' href='logo4.png' />
+    <meta charset="UTF-8">
+    <meta name="description" content="Een 'benoem het voorwerp' spel voor dementeerende mensen" />
+    <title>Menzie</title>
+</head>
+
+<body>
+
+    <audio id="applAudio" src="applause.mp3"></audio>
+    <audio id="klapAudio" src="klap.mp3"></audio>
+    <audio id="awwAudio" src="aww.mp3"></audio>
+
+
+
+    <div id="container" onload="setup()">
+        <div id='name'>
+            <button id="terugButton" value="next" onclick="terug();">Terug Naar Start</button>
+            <img id='logo' src='wijdlogo.png' hieght='160' />
+            <!-- <p id='head'>Menzie</p> -->
+        </div>
+        <div id="line"></div>
+        <div id="start" class="">
+            <button class="menubutton" onclick='starten();'>Starten</button>
+            <button class="menubutton" onclick='instellingen();'>Instellingen</button>
+            <button class="menubutton" onclick='scoreBoord();'>Scores</button>
+        </div>
+        <div id='score' class='scherm'>
+            <b>Uw scores:</b>
+            <ul>
+                <span id='listitemeraf'>
+                <li>
+                    2 maart: 12 punten
+                </li>
+                 </span>
+                <li>
+                    4 maart: 13 punten
+                </li>
+                <li>
+                    8 maart: 15 punten
+                </li>
+                <li>
+                    12 maart: 18 punten
+                </li>
+                <span id='listitemerbij'>
+                </span>
+            </ul>
+
+        </div>
+
+
+        <div id="vraag" class="scherm">
+            <div id='progressDiv'>
+                <div id="porgressBackground">
+                    <div id="progressBarInv"></div>
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+
+
+            <div id='vraag0' class='vraag'>
+                U krijgt zometeen een foto te zien. <br /> U moet dan het vakje aanklikken met het woord <br /> wat bij de foto past. <br /> De balk hierboven geef uw voortgang aan <br /> Aan het eind krijgt u uw score te zien. <br />
+                <button id='tutorialstartknop' onclick='volgendeVrg()'>Ik snap het!</button>
+
+            </div>
+            <div id='vraag1' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/wekker.png' id='fotoVraag1' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag1' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(1, false);'>Laken</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord1' onclick='ant(1, true);'>Wekker</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(1, false);'>Horloge</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(1, false);'>Repelsteeltje</button>
+                </div>
+            </div>
+            <div id='vraag2' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/tablet.png' id='fotoVraag2' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag2' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag2' onclick='ant(2, false);'>Leesboek</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag2' onclick='ant(2, false);'>Camera</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag2' onclick='ant(2, false);'>Afstandsbediening</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag2' id='goedAntwoord2' onclick='ant(2, true);'>Tablet</button>
+                </div>
+
+            </div>
+            <div id='vraag3' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/pakket.png' id='fotoVraag3' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag3' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' id='goedAntwoord3' onclick='ant(3, true);'>Pakketje</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(3, false);'>Computer</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(3, false);'>Bankstel</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' onclick='ant(3, false);'>Inpakpapier</button>
+                </div>
+
+            </div>
+            <div id='vraag4' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/fruitschaal.png' id='fotoVraag4' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag4' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(4, false);'>Kunstwerk</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(4, false);'>Groentesoep</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord4' onclick='ant(4, true);'>Fruitschaal</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(4, false);'>Avondmaaltijd</button>
+                </div>
+            </div>
+            <div id='vraag5' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/bibliotheek.png' id='fotoVraag5' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag5' class='antwoorden'>
+
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord5' onclick='ant(5, true);'>Bibliotheek</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(5, false);'>Salontafel</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(5, false);'>Zaal</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(5, false);'>Bladeren</button>
+                </div>
+            </div>
+            <div id='vraag6' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/fiets.png' id='fotoVraag6' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag6' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(6, false);'>Grasmaaier</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(6, false);'>Recreatiepark</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(6, false);'>Wielrenner</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord6' onclick='ant(6, true);'>Fiets</button>
+                </div>
+            </div>
+            <div id='vraag7' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/zakdoekje.png' id='fotoVraag7' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag7' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(7, false);'>Stembus</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord7' onclick='ant(7, true);'>Zakdoekje</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(7, false);'>Cadeau</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(7, false);'>Schrobber</button>
+
+                </div>
+            </div>
+            <div id='vraag8' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/waterkoker.png' id='fotoVraag8' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag8' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(8, false);'>Kan</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(8, false);'>Vaas</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(8, false);'>Theepot</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord8' onclick='ant(8, true);'>Waterkoker</button>
+                </div>
+            </div>
+            <div id='vraag9' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/lamp.png' id='fotoVraag9' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag9' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(9, false);'>Standbeeld</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(9, false);'>Kapstok</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord9' onclick='ant(9, true);'>Lamp</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(9, false);'>Lantaarnpaal</button>
+
+                </div>
+            </div>
+            <div id='vraag10' class='vraag'>
+                <div class='foto' id='fotoVraag1div'>
+                    <img src='fotos/hamster.jpg' id='fotoVraag10' class='vraagimg' height='400'  alt='Het lijkt erop dat de foto niet gevonden is' />
+                </div>
+                <div id='antwoordVraag10' class='antwoorden'>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(10, false);'>Konijn</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(10, false);'>Kat</button>
+                    <button class='antwoord foutAnt antwoordKeuzeVraag1' onclick='ant(10, false);'>Haas</button>
+                    <button class='antwoord goedAnt antwoordKeuzeVraag1' id='goedAntwoord10' onclick='ant(10, true);'>Hamster</button>
+                </div>
+            </div>
+            <div id='vraag11' class='vraag'>
+                <div id='einde'>
+                    Einde.
+                </div>
+                <div id='antwoordVraag11' class='antwoorden'>
+                </div>
+            </div>
+            <button id='volgendevraagknop' onclick='volgendeVrg()'>Volgende</button>
+            <div id='feedback'> </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="instellingen" class="scherm">
+            <div class='instelling'>
+
+                <span class="insetellingenTekst">
+                Geluid:
+                </span>
+                <button class='instelButton geluidButton gekozen' id='instGldAan' onclick='setgeluid("aan")'>Aan</button>
+                <button class='instelButton geluidButton' id="instGldUit" onclick='setgeluid("uit")'>Uit</button>
+                <br />
+            </div>
+            <div class='instelling'>
+
+
+                <span class="insetellingenTekst">
+                Moeilijkheidsgraad:
+            </span>
+                <button class='instelButton nivButton' id='nivMoe' onclick="setNiv('moe')">Moeilijk</button>
+                <button class='instelButton nivButton gekozen' id='nivMak' onclick="setNiv('mak')">Makkelijk</button>
+                <br />
+            </div>
+            <div class='instelling'>
+
+
+
+                <span class="insetellingenTekst">
+                Uitleg in het begin:
+            </span>
+                <button class='instelButton uitlegButton gekozen' id='uitlegAan' onclick="setUitleg(true)">Ja</button>
+
+                <button class='instelButton uitlegButton' id='uitlegUit' onclick="setUitleg(false)">Nee</button>
+                <br />
+            </div>
+
+
+            <span class="insetellingenTekst">
+                Automatisch volgende vraag:
+            </span>
+            <button class='instelButton volgendeButton' id='autoVolgendeAan' onclick="autovolgende(true)">Ja</button>
+            <button class='instelButton volgendeButton gekozen' id='autoVolgendeUit' onclick="autovolgende(false)">Nee</button>
+
+        </div>
+        <div id="score" class="scherm">
+
+        </div>
+
+
+
+    </div>
+        <div id='footer'>
+            2017 &copy; JE NAAM DOE JE HIER
+        </div>
+
+
+
+</body>
+
+</html>

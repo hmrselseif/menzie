@@ -1,0 +1,125 @@
+#vraag0 {
+    font-size: 26px;
+}
+
+#progressDiv {
+    width: 820px;
+    margin: 0 auto;
+}
+
+#progressBar {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0%, -50%);
+    width: 0px;
+    height: 52px;
+    background-color: #137B13;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    z-index: 0;
+}
+
+#progressBarInv {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0%, -50%);
+    width: 400px;
+    height: 52px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+#porgressBackground {
+    height: 60px;
+    background-color: gray;
+    width: 420px;
+    position: relative;
+    border-radius: 7px;
+    z-index: -2;
+    margin: 0px 210px;
+}
+
+.antwoord {
+    border-radius: 5px;
+    border: none;
+    width: 400px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid #2196F3;
+}
+
+.antwoord:hover {
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+}
+
+.vraag {
+    width: 820px;
+    margin: 0 auto;
+}
+
+.vraagimg {
+    margin: 0 auto;
+    height: 40vh;
+    max-height: 400px;
+    max-width: 800px;
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 0px;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#feedback, #antwoordVraag11, #einde {
+    width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+#volgendevraagknop, #tutorialstartknop {
+    position: relative;
+    float: right;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid #2196F3;
+    margin: 5px;
+}
+
+#tutorialstartknop {
+    width: 200px;
+}
+
+#tutorialstartknop:hover, #volgendevraagknop:hover {
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+}
+
+.vraag {
+    display: none;
+}
